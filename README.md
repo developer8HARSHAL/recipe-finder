@@ -1,72 +1,65 @@
-# Getting Started with Create React App
+# 🍳 Recipe Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple, responsive **Recipe Finder** built with **React + TailwindCSS** and powered by **TheMealDB API**.  
+Search for recipes by ingredients, explore detailed instructions, and even get a random "Surprise Me" dish.
 
-## Available Scripts
+🔗 **Live Demo:** [Recipe Finder on CodeSandbox](https://3j7x7r-3000.csb.app/)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ✅ Day 1 – Setup + Search Flow
+- **React project with TailwindCSS** – Project setup in `App.jsx` + `index.css`.
+- **Homepage with search bar + button** – Implemented in `Home.jsx` + `SearchBar.jsx`.
+- **Fetch recipes by ingredient** – API call via `searchRecipesByIngredient()` in `mealAPI.js`.
+- **Display recipe cards** – Responsive grid layout in `RecipeList.jsx` (1-2-3-4 columns).
+- **Loading + error states** – Fully handled in `Home.jsx`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### ✅ Day 2 – Cards + Detail View
+- **RecipeCard with hover effects** – Transform + scale hover animations in `RecipeCard.jsx`.
+- **Click → RecipeDetail view** – Navigation to `/recipe/:id` works.
+- **RecipeDetail component** (`RecipeDetail.jsx`):
+  - Fetches recipe details using `lookup.php?i={idMeal}` via `getRecipeById()`.
+  - Displays **image, title, category, cuisine**.
+  - Ingredient list formatted with `formatIngredients()` helper.
+  - Collapsible instructions ("Read more/less").
+- **Missing data handling** – Graceful fallbacks via `helpers.js` and components.
+- **Edge case handling** – Error states in `RecipeDetailPage.jsx`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### ✅ Day 3 – Polish + Extra Features
+- **Surprise Me button** – Fetches a random recipe and navigates to detail page.
+- **Skeleton loaders** – Smooth professional loading experience.
+- **Multi-ingredient search** – Search using multiple ingredients (e.g., `chicken, rice`).
+- **Enhanced Hero Section** – Gradient design with call-to-action elements.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
+- **Frontend:** React, TailwindCSS
+- **API:** [TheMealDB](https://www.themealdb.com/api/json/v1/1/filter.php?i={ingredient})
+- **Deployment:** CodeSandbox
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📸 Preview
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Search Recipes:** Enter ingredients to get matching recipes.  
+- **Recipe Cards:** Responsive grid with hover effects.  
+- **Recipe Details:** Full instructions, ingredients, category & cuisine.  
+- **Surprise Me:** Random recipe generator.  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📌 Future Enhancements
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Add **favorites** with local storage.  
+- Pagination for large search results.  
+- Dark mode support.  
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# recipe-finder
-A React + Tailwind app to search recipes by ingredients with detailed views and random recipe discovery.
